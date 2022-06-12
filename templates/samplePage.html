@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Flask Intro - login page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Please Enter The Issue </h1>
+      <br>
+      <form action="" method="post">
+          <p>
+        <input type="text" placeholder="Issue Title" name="issueTitle" value="{{
+          request.form.issueTitle }}">
+        </p>
+
+        <div class="col-md-4">
+          {{ wtf.quick_form(form) }}
+        </div>
+
+        <p>
+         <input style="height:200px;font-size:14pt;" type="text" placeholder="Issue Body" name="issueBody" value="{{
+          request.form.issueBody }}">
+        </p>
+        
+
+        <p>
+        <input class="btn btn-default" type="submit" value="Find Results">
+        </p>
+        
+      </form>
+      {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
+    </div>
+  </body>
+</html>

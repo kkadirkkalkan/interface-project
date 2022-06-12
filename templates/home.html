@@ -1,0 +1,99 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    
+    
+    <title>Flask app</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  </head>
+  <body>
+      
+    <div class="container">
+        <h2>Please Enter An Issue</h2>
+        <br>
+        
+        <script> 
+          
+          if('{{ test1 }}'=="Non Bug"){
+
+           document.write("asdasd")
+          
+          
+          
+          }
+
+        </script>
+          
+
+          <form  action="" method="post"> 
+            
+                
+                <textarea id="texta1" type="text" placeholder="Issue Title" name="issueTitle" id="issueTitle" value="{{request.form.issueTitle }}" ></textarea><br />&nbsp;<br />
+                <textarea type="text" type="text" placeholder="Issue Body" name="issueBody" id="issueBody" value="{{request.form.issueBody }}" ></textarea><br />&nbsp;<br />
+                <button class="button">Get Results</button><br />&nbsp;<br />
+
+          
+                <!---
+                <p class="ex"> Roberta result : {{test}} </p>
+                <p class="ex"> Bert result : {{test1}}</p>
+                <p class="ex"> Distilbert result : {{test2}}</p>-->
+
+                
+
+                <table class="center" >
+                  <tr>
+                    <th style="color:#91a2b2;">Models</th>
+                    <th style="color:#91a2b2;">Bug</th>
+                    <th style="color:#91a2b2;">Question</th>
+                    <th style="color:#91a2b2;">Enhancement</th>
+                  </tr>
+                  
+                  
+                  <tr>
+                    <td style="color:#708090;">BERT</td>
+
+                    <td> {{bugb}}</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td style="color:#708090;">RoBERTa</td>
+                    <td>{{bugr}}</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td style="color:#708090;">DistilBERT</td>
+                    <td>{{bugd}}</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </form>
+
+              
+                
+
+      
+            
+          
+  
+          
+         
+          
+       
+        {% if error %}
+          <p class="error"><strong>Error:</strong> {{ error }}
+        {% endif %}
+      </div>
+
+      
+  </body>
+</html>
